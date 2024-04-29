@@ -20,7 +20,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (!StringUtils.isAlpha(name)) {
             throw new StringFormatException("Имя должно содержать только буквы");
         }
-        name = StringUtils.capitalize(name);
         Employee employee = new Employee(name, department, salary);
         if (employees.contains(employee)) {
             throw new EmployeeAlreadyAddedException("Сотрудник уже существует");
@@ -34,7 +33,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (!StringUtils.isAlpha(name)) {
             throw new StringFormatException("Имя должно содержать только буквы");
         }
-        name = StringUtils.capitalize(name);
         Employee employee = new Employee(name, department, salary);
         if (employees.contains(employee)) {
             employees.remove(employee);
@@ -48,7 +46,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (!StringUtils.isAlpha(name)) {
             throw new StringFormatException("Имя должно содержать только буквы");
         }
-        name = StringUtils.capitalize(name);
         Employee employee = new Employee(name, department, salary);
         if (employees.contains(employee)) {
             return employee;

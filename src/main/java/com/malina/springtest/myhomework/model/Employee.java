@@ -4,23 +4,21 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.apache.commons.lang3.StringUtils;
 
 
+@Getter
 @EqualsAndHashCode
 @ToString
 public class Employee {
 
-    @Getter
     private final int id;
 
-    @Getter
     private final String name;
 
-    @Getter
     @Setter
     private int department;
 
-    @Getter
     @Setter
     private int salary;
 
@@ -28,7 +26,7 @@ public class Employee {
 
     public Employee(String name, int department, int salary) {
         this.id = idCounter++;
-        this.name = name;
+        this.name = StringUtils.capitalize(name);
         this.department = department;
         this.salary = salary;
     }
